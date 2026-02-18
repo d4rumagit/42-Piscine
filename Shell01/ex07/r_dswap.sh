@@ -1,0 +1,1 @@
+cat /etc/passwd | sed '/^#/d' | head -n 2 | cut -d':' -f1 | rev | sort -r | paste -s -d "," - | sed 's/,/, /g' | sed 's/$/./' | tr -d '\n'
